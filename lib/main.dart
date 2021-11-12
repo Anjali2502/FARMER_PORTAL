@@ -3,6 +3,8 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:community_material_icon/community_material_icon.dart';
 
+import 'home/home.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -12,7 +14,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
-      home: new LoginPage(),
+      home: new Home(),
+      // home: new LoginPage(),
       theme: new ThemeData(
         primarySwatch: Colors.blue
       )
