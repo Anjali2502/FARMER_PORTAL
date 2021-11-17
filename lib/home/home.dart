@@ -10,7 +10,7 @@ class Home extends StatelessWidget {
       drawer: NavBar(),
       appBar: AppBar(
         backgroundColor: Colors.black,
-        title: Text('Home Page'),
+        title: Text('Home'),
       ),
     );
   }
