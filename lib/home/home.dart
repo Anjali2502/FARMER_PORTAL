@@ -9,6 +9,7 @@ class Home extends StatelessWidget {
     return Scaffold(
       drawer: NavBar(),
       appBar: AppBar(
+        backgroundColor: Colors.black,
         title: Text('Home Page'),
       ),
     );

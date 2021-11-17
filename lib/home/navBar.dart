@@ -10,6 +10,9 @@ class NavBar extends StatelessWidget {
         padding: EdgeInsets.zero,
         children: [
           UserAccountsDrawerHeader(
+            decoration: BoxDecoration(
+              color: Colors.black,
+            ),
             accountName: Text('gegeef'),
             accountEmail: Text('abc@gmail.com'),
             currentAccountPicture: CircleAvatar(
