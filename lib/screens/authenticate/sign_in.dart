@@ -1,4 +1,5 @@
 import 'package:farmer_merchant/services/auth.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
@@ -15,6 +16,11 @@ class _LoginPageState extends State<LoginPage> {
   late TapGestureRecognizer _tapGestureRecognizer;
 
   final AuthService _auth = AuthService();
+  final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
+  String email="";
+  String psswd = "";
+  String confrmpsswd = "";
+  String error = "";
 
   @override
   void initState() {
@@ -31,6 +37,7 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
+      key: _scaffoldKey,
       backgroundColor: Colors.black,
       body:new Stack(
         fit: StackFit.expand,
@@ -136,8 +143,11 @@ class _LoginPageState extends State<LoginPage> {
                         buildSignInSection(),
                       if(!isSignUp)
                         buildBottomHalfContainer(false,"Login"),
+
                     ],
+
                   ),
+
                 ),
               )
 
@@ -200,14 +210,21 @@ class _LoginPageState extends State<LoginPage> {
       margin: EdgeInsets.only(top:20),
 
       child: Column(
+
         children: [
-          buildTextField(Icons.mail_outline, "Email_id", false, true),
-          buildTextField(Icons.lock_outline, "Password", true, false),
+          buildTextField(Icons.mail_outline, "Email_id", false, true,false),
+          buildTextField(Icons.lock_outline, "Password", true, false,false),
+          SizedBox(height: 20.0),
+
+          Text(error,style: TextStyle(color: Colors.red,fontSize: 6.0)),
+
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Row(
+
                 children: [
+
                   Checkbox(
                     value: isRememberme,
                     activeColor: Colors.white,
@@ -225,6 +242,7 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                   ),
 
+
                 ],
               ),
               TextButton(
@@ -233,6 +251,7 @@ class _LoginPageState extends State<LoginPage> {
                     print("hello");
                   });
                 },
+
                 child: Text(
                   'Forgot Password ?',
                   style: TextStyle(
@@ -254,9 +273,12 @@ class _LoginPageState extends State<LoginPage> {
       margin: EdgeInsets.only(top: 20),
       child: Column(
         children: [
-          buildTextField(Icons.email_outlined,"Email-ID",false,true),
-          buildTextField(Icons.lock_outline,"Password",true,false),
-          buildTextField(Icons.lock_outline,"Confirm Password",true,false),
+          buildTextField(Icons.email_outlined,"Email-ID",false,true,false),
+          buildTextField(Icons.lock_outline,"Password",true,false,false),
+          buildTextField(Icons.lock_outline,"Confirm Password",false,false,true),
+          SizedBox(height: 20.0),
+
+          Text(error,style: TextStyle(color: Colors.red,fontSize: 6.0)),
           /*Container(
                           width: 200,
                           margin: EdgeInsets.only(top: 20),
@@ -273,12 +295,30 @@ class _LoginPageState extends State<LoginPage> {
       ),
     );
   }
-  Widget buildTextField(IconData icon,String hintText,bool isPassword,bool isEmail){
+  Widget buildTextField(IconData icon,String hintText,bool isPassword,bool isEmail,bool iscpsswd){
     return Padding(
       padding: const EdgeInsets.only(bottom: 10.0),
       child: TextField(
-        obscureText: isPassword,
+        obscureText: isPassword || iscpsswd,
+
         keyboardType: isEmail ? TextInputType.emailAddress: TextInputType.text,
+        onChanged: (val){
+          if(isEmail){
+            setState(() {
+              email=val;
+            });
+          } else if(isPassword)
+            {
+              setState(() {
+                psswd=val;
+              });
+            } else
+              {
+                setState(() {
+                  confrmpsswd=val;
+                });
+              }
+        },
         decoration: InputDecoration(
           prefixIcon: Icon(
             icon,
@@ -362,17 +402,48 @@ class _LoginPageState extends State<LoginPage> {
                       onTap:() async{
                         if(s=="Login")
                         {
-                          dynamic result = await _auth.signInAnon();
-                          if(result == null) {
-                            print('error signing in');
-                          } else {
-                            print('signed in');
-                            print(result);
-                          }
+                          // dynamic result = await _auth.signInAnon();
+                          // if(result == null) {
+                          //   print('error signing in');
+                          // } else {
+                          //   print('signed in');
+                          //   print(result);
+                          // }
+                          // print("email is :" + email);
+                          // print("password is :" + psswd);
+                          if(email!="" && psswd!="") {
+                              print("you are signed in");
+                              dynamic result = await _auth.signInWithEmailandPassword(email, psswd);
+
+                              if(result==null){
+                                  setState(() {
+                                    error="could not sign in with those credentials";
+                                   });
+
+                             }
+                        }else{
+                        throw "fields cannot be empty" ;
+
                         }
-                        else
-                        {
-                          print("anjali");
+
+                        }else{
+                          // print("anjali");
+                          if(email!="" && psswd!=""&&confrmpsswd!="") {
+                            if (psswd == confrmpsswd) {
+                              print("you are signed up");
+                              dynamic result = await _auth.registerWithEandP(email,psswd);
+                              if(result==null){
+                                setState(() {
+                                  error="please supply valid email";
+                                });
+
+                              }
+                            }
+                          }
+                          else
+                            {
+                              throw "fields cannot be empty" ;
+                            }
                         }
 
                       },
@@ -382,9 +453,16 @@ class _LoginPageState extends State<LoginPage> {
                         size: 15,
 
                       ),
+
                     ),
+
+
+
+
                   ],
+
                 ),
+
               ),
             ) : Center(),
           ),

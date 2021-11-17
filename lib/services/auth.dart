@@ -1,5 +1,7 @@
 import 'package:farmer_merchant/models/farmer_user.dart';
+import 'package:farmer_merchant/models/farmer_user.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
 
 class AuthService {
 
@@ -12,7 +14,8 @@ class AuthService {
 
   // auth change user stream
   Stream<FUser?> get user {
-    return _auth.authStateChanges().map((User? user) => _userFromFirebaseUser(user!));
+    return _auth.authStateChanges().map((User? user) =>
+        _userFromFirebaseUser(user!));
   }
 
   // sign in anon
@@ -21,6 +24,15 @@ class AuthService {
       UserCredential result = await _auth.signInAnonymously();
       User? user = result.user;
       return _userFromFirebaseUser(user!);
+    } catch (e) {
+      print(e.toString());
+      return null;
+    }
+  }
+
+  Future signOut() async {
+    try {
+      return await _auth.signOut();
     } catch (e) {
       print(e.toString());
       return null;
@@ -38,10 +50,18 @@ class AuthService {
       print(e.toString());
       return null;
     }
+  }
+  Future registerWithEandP(String email,String password) async {
+    try{
+      UserCredential result = await _auth.createUserWithEmailAndPassword(email: email, password: password);
+      User? user = result.user;
+      return _userFromFirebaseUser(user!);
+    } catch(e){
+      print(e.toString());
+      return null;
+    }
 
-    // register with email and pass
 
-    // sign out
 
   }
 }
