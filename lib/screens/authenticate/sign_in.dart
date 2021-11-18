@@ -276,21 +276,10 @@ class _LoginPageState extends State<LoginPage> {
           buildTextField(Icons.email_outlined,"Email-ID",false,true,false),
           buildTextField(Icons.lock_outline,"Password",true,false,false),
           buildTextField(Icons.lock_outline,"Confirm Password",false,false,true),
-          SizedBox(height: 20.0),
+          SizedBox(height: 10.0),
 
-          Text(error,style: TextStyle(color: Colors.red,fontSize: 6.0)),
-          /*Container(
-                          width: 200,
-                          margin: EdgeInsets.only(top: 20),
-                          child: RichText(
-                            textAlign: TextAlign.center,
-                            text: TextSpan(
-                              recognizer: _tapGestureRecognizer,
-                              text: "Forgot Password?",
-                              style: TextStyle(color: Colors.red)
-                            ),
-                          ),
-                        )*/
+          Text(error,style: TextStyle(color: Colors.red,fontSize: 12.0)),
+          SizedBox(height: 20.0),
         ],
       ),
     );

@@ -1,7 +1,10 @@
+import 'package:farmer_merchant/services/auth.dart';
 import 'package:flutter/material.dart';
 
 class NavBar extends StatelessWidget {
   // const ({Key? key}) : super(key: key);
+
+  final AuthService _auth = AuthService();
 
   @override
   Widget build(BuildContext context) {
@@ -46,6 +49,20 @@ class NavBar extends StatelessWidget {
             title: Text('Account'),
             onTap: () => null,
           ),
+          ListTile(
+            leading: Icon(Icons.logout_sharp),
+            title: Text('logout'),
+            onTap: () async{
+              await _auth.signOut();
+            },
+          ),
+          // FlatButton.icon(
+          //     onPressed:() async{
+          //       await _auth.signOut();
+          //     },
+          //     icon: Icon(Icons.logout_sharp,color: Colors.white),
+          //     label: Text("logout",
+          //       style: TextStyle(color: Colors.white),))
         ],
       ),
     );
