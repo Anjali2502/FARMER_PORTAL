@@ -21,6 +21,9 @@ class _LoginPageState extends State<LoginPage> {
   String psswd = "";
   String confrmpsswd = "";
   String error = "";
+  String UserName="";
+  String _dropdownValue="Farmer";
+  var items = ["Farmer","Merchant"];
 
   @override
   void initState() {
@@ -212,8 +215,33 @@ class _LoginPageState extends State<LoginPage> {
       child: Column(
 
         children: [
-          buildTextField(Icons.mail_outline, "Email_id", false, true,false),
-          buildTextField(Icons.lock_outline, "Password", true, false,false),
+          buildTextField(Icons.mail_outline, "Email_id", false, true,false,false),
+          buildTextField(Icons.lock_outline, "Password", true, false,false,false),
+          DropdownButton(
+            hint: Text("User Type"),
+            style: TextStyle(
+              color: Colors.white
+            ),
+            dropdownColor: Colors.black,
+            value:_dropdownValue ,
+            icon: Icon(Icons.keyboard_arrow_down),
+            items: items.map((String items){
+            return DropdownMenuItem(
+                value: items,
+                child: Text(items)
+            );
+          }
+          ).toList(),
+          onChanged: (val){
+              setState(() {
+                this._dropdownValue=val.toString();
+              });
+
+          },
+
+
+
+          ),
           SizedBox(height: 20.0),
 
           Text(error,style: TextStyle(color: Colors.red,fontSize: 6.0)),
@@ -273,9 +301,36 @@ class _LoginPageState extends State<LoginPage> {
       margin: EdgeInsets.only(top: 20),
       child: Column(
         children: [
-          buildTextField(Icons.email_outlined,"Email-ID",false,true,false),
-          buildTextField(Icons.lock_outline,"Password",true,false,false),
-          buildTextField(Icons.lock_outline,"Confirm Password",false,false,true),
+          buildTextField(Icons.email_outlined,"Email-ID",false,true,false,false),
+          buildTextField(Icons.lock_outline,"Password",true,false,false,false),
+          buildTextField(Icons.lock_outline,"Confirm Password",false,false,true,false),
+          buildTextField(Icons.email_outlined,"User Name",false,false,false,true),
+
+          DropdownButton(
+            hint: Text("User Type"),
+            style: TextStyle(
+                color: Colors.white
+            ),
+            dropdownColor: Colors.black,
+            value:_dropdownValue ,
+            icon: Icon(Icons.keyboard_arrow_down),
+            items: items.map((String items){
+              return DropdownMenuItem(
+                  value: items,
+                  child: Text(items)
+              );
+            }
+            ).toList(),
+            onChanged: (val){
+              setState(() {
+                this._dropdownValue=val.toString();
+              });
+
+            },
+
+
+
+          ),
           SizedBox(height: 10.0),
 
           Text(error,style: TextStyle(color: Colors.red,fontSize: 12.0)),
@@ -284,13 +339,14 @@ class _LoginPageState extends State<LoginPage> {
       ),
     );
   }
-  Widget buildTextField(IconData icon,String hintText,bool isPassword,bool isEmail,bool iscpsswd){
+  Widget buildTextField(IconData icon,String hintText,bool isPassword,bool isEmail,bool iscpsswd,bool isusername){
     return Padding(
       padding: const EdgeInsets.only(bottom: 10.0),
       child: TextField(
         obscureText: isPassword || iscpsswd,
 
         keyboardType: isEmail ? TextInputType.emailAddress: TextInputType.text,
+        //keyboardType: isusername ? TextInputType.emailAddress: TextInputType.text,
         onChanged: (val){
           if(isEmail){
             setState(() {
@@ -301,12 +357,16 @@ class _LoginPageState extends State<LoginPage> {
               setState(() {
                 psswd=val;
               });
-            } else
+            } else if(iscpsswd)
               {
                 setState(() {
                   confrmpsswd=val;
                 });
-              }
+              }else{
+            setState(() {
+              UserName=val;
+            });
+          }
         },
         decoration: InputDecoration(
           prefixIcon: Icon(
@@ -420,7 +480,7 @@ class _LoginPageState extends State<LoginPage> {
                           if(email!="" && psswd!=""&&confrmpsswd!="") {
                             if (psswd == confrmpsswd) {
                               print("you are signed up");
-                              dynamic result = await _auth.registerWithEandP(email,psswd);
+                              dynamic result = await _auth.registerWithEandP(email,psswd,_dropdownValue,UserName);
                               if(result==null){
                                 setState(() {
                                   error="please supply valid email";
