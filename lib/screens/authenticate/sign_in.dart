@@ -1,7 +1,10 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:farmer_merchant/services/auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:farmer_merchant/services/User_Database.dart';
+import 'package:provider/provider.dart';
 
 class LoginPage extends StatefulWidget {
 
@@ -461,15 +464,54 @@ class _LoginPageState extends State<LoginPage> {
                           // print("email is :" + email);
                           // print("password is :" + psswd);
                           if(email!="" && psswd!="") {
-                              print("you are signed in");
-                              dynamic result = await _auth.signInWithEmailandPassword(email, psswd);
+                              //print("you are signed in");
+                              if(_dropdownValue=="Farmer"){
+                                FirebaseFirestore.instance
+                                    .collection('farmer')
+                                    .doc(email)
+                                    .get()
+                                    .then((DocumentSnapshot documentSnapshot) async {
+                                  if (documentSnapshot.exists) {
+                                    //print('Document exists on the database');
+                                    dynamic result = await _auth.signInWithEmailandPassword(email, psswd);
 
-                              if(result==null){
-                                  setState(() {
-                                    error="could not sign in with those credentials";
-                                   });
+                                    if(result==null){
+                                      setState(() {
+                                        error="could not sign in with those credentials";
+                                      });
 
-                             }
+                                    }
+                                  }
+                                });
+
+                              }
+                              else if(_dropdownValue=="Merchant"){
+                                FirebaseFirestore.instance
+                                    .collection('merchant')
+                                    .doc(email)
+                                    .get()
+                                    .then((DocumentSnapshot documentSnapshot) async {
+                                  if (documentSnapshot.exists) {
+                                    //print('Document exists on the database');
+                                    dynamic result = await _auth.signInWithEmailandPassword(email, psswd);
+
+                                    if(result==null){
+                                      setState(() {
+                                        error="could not sign in with those credentials";
+                                      });
+
+                                    }
+                                  }
+                                  else
+                                    {
+                                      setState(() {
+                                        error="invalid user";
+                                      });
+                                    }
+                                });
+
+                              }
+
                         }else{
                         throw "fields cannot be empty" ;
 

@@ -21,5 +21,12 @@ class DatabaseService{
       'username': username,
     });
   }
+  Stream<QuerySnapshot> get farmer {
+    return farmerCollection.snapshots();
+
+  }
+  Stream<QuerySnapshot> get merchant {
+    return merchantCollection.snapshots();
+  }
 
 }
