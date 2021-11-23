@@ -23,7 +23,7 @@ class _HomeState extends State<Home> {
   bool isFlipped5 = false;
   bool isFlipped6 = false;
 
-  // Widget transition(Widget widget, Animation<double> animation) {
+  // Widget transition(Widget widget, Animation<double> animation,bool yes) {
   //
   //   final flipAnimation = Tween(begin: pi,end: 0.0).animate(animation);
   //
@@ -89,6 +89,7 @@ class _HomeState extends State<Home> {
                     pr3: 1750.00,
                   ),
                 ),
+
                 transitionBuilder: (Widget widget, Animation<double> animation) {
 
               final flipAnimation = Tween(begin: pi,end: 0.0).animate(animation);
@@ -405,7 +406,7 @@ class Crop_info extends StatelessWidget {
               'Information',
               textAlign: TextAlign.center,
               style: TextStyle(
-                fontSize: 16,
+                fontSize: size.height*0.02,
                 color: Colors.black,
                 fontWeight: FontWeight.bold,
               ),
@@ -418,7 +419,10 @@ class Crop_info extends StatelessWidget {
               ),
             ),
             SizedBox(height: 4),
-            Text(info),
+            Text(info,
+            style: TextStyle(
+              fontSize: size.height*0.016
+            ),),
           ],
         ),
       ),
@@ -501,7 +505,7 @@ class Crops extends StatelessWidget {
                   name,
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                    fontSize: 18,
+                    fontSize: size.height*0.018,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -512,7 +516,10 @@ class Crops extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 6.0),
-                Text('Average Price:- Rs $pr1'),
+                Text('Average Price:- Rs $pr1',
+                style: TextStyle(
+                  fontSize: size.height*0.014
+                ),),
                 Text('INR/Quintal'),
                 SizedBox(height: 6.0),
                 Text('Costiliest Market Price:- Rs $pr2'),

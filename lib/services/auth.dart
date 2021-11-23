@@ -1,5 +1,6 @@
 import 'package:farmer_merchant/models/farmer_user.dart';
 import 'package:farmer_merchant/models/farmer_user.dart';
+import 'package:farmer_merchant/services/User_Database.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -51,10 +52,16 @@ class AuthService {
       return null;
     }
   }
-  Future registerWithEandP(String email,String password) async {
+  Future registerWithEandP(String email,String password,String usertype,String username) async {
     try{
       UserCredential result = await _auth.createUserWithEmailAndPassword(email: email, password: password);
       User? user = result.user;
+      if(usertype=="Farmer"){
+      await DatabaseService(uid:user!.uid).updateFarmerData(email,usertype,username);}
+      else
+        {
+          await DatabaseService(uid:user!.uid).updateMerchantData(email, usertype, username);
+        }
       return _userFromFirebaseUser(user!);
     } catch(e){
       print(e.toString());
