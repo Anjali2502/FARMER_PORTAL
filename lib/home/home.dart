@@ -23,26 +23,6 @@ class _HomeState extends State<Home> {
   bool isFlipped5 = false;
   bool isFlipped6 = false;
 
-  // Widget transition(Widget widget, Animation<double> animation,bool yes) {
-  //
-  //   final flipAnimation = Tween(begin: pi,end: 0.0).animate(animation);
-  //
-  //   return AnimatedBuilder(
-  //     animation: flipAnimation,
-  //     child: widget,
-  //     builder: (context,widget){
-  //
-  //       final isUnder = (ValueKey(isFlipped) != widget!.key);
-  //       final value = isUnder ? min(flipAnimation.value,pi/2) : flipAnimation.value;
-  //       return Transform(
-  //         transform: Matrix4.rotationY(value),
-  //         child: widget,
-  //         alignment: Alignment.center,
-  //       );
-  //     },
-  //
-  //   );
-  // }
 
   @override
   Widget build(BuildContext context) {
