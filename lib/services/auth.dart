@@ -10,7 +10,7 @@ class AuthService {
 
   // create user obj based on firebaseUser
   FUser? _userFromFirebaseUser(User user) {
-    return user != null ? FUser(uid: user.uid) : null;
+    return user != null ? FUser(uid: user.uid,email: user.email) : null;
   }
 
   // auth change user stream
@@ -59,10 +59,10 @@ class AuthService {
       UserCredential result = await _auth.createUserWithEmailAndPassword(email: email, password: password);
       User? user = result.user;
       if(usertype=="Farmer"){
-      await DatabaseService(uid:user!.uid).updateFarmerData(email,usertype,username);}
+      await DatabaseService(uid:user!.uid,email: user!.email).updateFarmerData(email,usertype,username);}
       else
         {
-          await DatabaseService(uid:user!.uid).updateMerchantData(email, usertype, username);
+          await DatabaseService(uid:user!.uid,email: user!.email).updateMerchantData(email, usertype, username);
         }
       return _userFromFirebaseUser(user!);
     } catch(e){
