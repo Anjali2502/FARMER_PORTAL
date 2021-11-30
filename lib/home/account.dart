@@ -36,10 +36,10 @@ class _AccountState extends State<Account> {
   String cotton_qty="";
   @override
   Widget build(BuildContext context) {
-    final user = Provider.of<FUser>(context);
+    final user = Provider.of<FUser?>(context);
     return StreamBuilder<FarmerData?>(
 
-        stream: DatabaseService(email:user.email,uid: user.uid).farmerInfo,
+        stream: DatabaseService(email:user!.email,uid: user.uid).farmerInfo,
         builder: (context,snapshot) {
 
           FarmerData? farmerData = snapshot.data;
