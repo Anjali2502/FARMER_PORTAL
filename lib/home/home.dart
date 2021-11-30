@@ -401,7 +401,7 @@ class Crop_info extends StatelessWidget {
             SizedBox(height: 4),
             Text(info,
             style: TextStyle(
-              fontSize: size.height*0.016
+              fontSize: size.height*0.017,
             ),),
           ],
         ),
@@ -485,7 +485,7 @@ class Crops extends StatelessWidget {
                   name,
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                    fontSize: size.height*0.018,
+                    fontSize: size.height*0.022,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -498,15 +498,34 @@ class Crops extends StatelessWidget {
                 SizedBox(height: 6.0),
                 Text('Average Price:- Rs $pr1',
                 style: TextStyle(
-                  fontSize: size.height*0.014
+                  fontSize: size.height*0.019,
                 ),),
-                Text('INR/Quintal'),
+                Text('INR/Quintal',
+                  style: TextStyle(
+                    fontSize: size.height*0.019,
+                  ),),
                 SizedBox(height: 6.0),
-                Text('Costiliest Market Price:- Rs $pr2'),
-                Text('INR/Quintal'),
+                Text('Costiliest Market Price:- Rs $pr2',
+                  style: TextStyle(
+                    fontSize: size.height*0.019,
+                  ),
+                ),
+                Text('INR/Quintal',
+                  style: TextStyle(
+                    fontSize: size.height*0.019,
+                  ),
+                ),
                 SizedBox(height: 6.0),
-                Text('Cheapest Market Price:- Rs $pr3'),
-                Text('INR/Quintal'),
+                Text('Cheapest Market Price:- Rs $pr3',
+                  style: TextStyle(
+                    fontSize: size.height*0.019,
+                  ),
+                ),
+                Text('INR/Quintal',
+                  style: TextStyle(
+                    fontSize: size.height*0.019,
+                  ),
+                ),
               ],
             ),
           ),

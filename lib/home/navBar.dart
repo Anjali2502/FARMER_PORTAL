@@ -1,4 +1,5 @@
 import 'package:farmer_merchant/home/account.dart';
+import 'package:farmer_merchant/home/loan.dart';
 import 'package:farmer_merchant/services/auth.dart';
 import 'package:flutter/material.dart';
 
@@ -43,7 +44,14 @@ class NavBar extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.home),
             title: Text('Loan'),
-            onTap: () => null,
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => Loan(),
+                ),
+              );
+            },
           ),
           ListTile(
             leading: Icon(Icons.settings),
