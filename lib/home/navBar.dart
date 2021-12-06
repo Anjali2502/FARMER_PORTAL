@@ -1,7 +1,10 @@
 import 'package:farmer_merchant/home/account.dart';
+import 'package:farmer_merchant/home/apmc.dart';
 import 'package:farmer_merchant/home/loan.dart';
 import 'package:farmer_merchant/services/auth.dart';
 import 'package:flutter/material.dart';
+
+import 'home.dart';
 
 class NavBar extends StatelessWidget {
   // const ({Key? key}) : super(key: key);
@@ -22,8 +25,7 @@ class NavBar extends StatelessWidget {
             accountEmail: Text('abc@gmail.com'),
             currentAccountPicture: CircleAvatar(
               child: ClipOval(
-                child: Image.network(
-                  'https://i.pinimg.com/originals/8b/16/7a/8b167af653c2399dd93b952a48740620.jpg',
+                child: Image.asset('assets/farmers.PNG',
                   width: 90,
                   height: 90,
                   fit: BoxFit.cover,
@@ -34,12 +36,26 @@ class NavBar extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.home),
             title: Text('Home'),
-            onTap: () => null,
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => Home(),
+                ),
+              );
+            },
           ),
           ListTile(
             leading: Icon(Icons.home),
             title: Text('APMC'),
-            onTap: () => null,
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => APMC(),
+                ),
+              );
+            },
           ),
           ListTile(
             leading: Icon(Icons.home),

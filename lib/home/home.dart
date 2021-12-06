@@ -485,7 +485,7 @@ class Crops extends StatelessWidget {
                   name,
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                    fontSize: size.height*0.022,
+                    fontSize: size.height*0.020,
                     fontWeight: FontWeight.bold,
                   ),
                 ),

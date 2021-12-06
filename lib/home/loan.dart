@@ -15,6 +15,7 @@ class _LoanState extends State<Loan> {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Scaffold(
       drawer: NavBar(),
       appBar: AppBar(
@@ -32,20 +33,42 @@ class _LoanState extends State<Loan> {
             },
             child: Column(
               children: [
+                Text('LOAN INFORMATION',
+                  style: TextStyle(
+                      fontSize: 22,
+                      fontWeight: FontWeight.bold,
+                      shadows: <Shadow>[
+                        Shadow(
+                          offset: Offset(1.0,0),
+                          blurRadius: 3,
+                          color: Colors.black.withOpacity(0.1),
+                        )
+                      ]
+                  ),
+                ),
+                SizedBox(height: 20),
                 Table(
-                  defaultVerticalAlignment: TableCellVerticalAlignment.middle,
+                  columnWidths: {
+                    0: FixedColumnWidth(size.width*0.25),// fixed to 100 width
+                    1: FlexColumnWidth(size.width*0.4),
+                    2: FixedColumnWidth(size.width*0.3),//fixed to 100 width
+                  },
+                  // defaultVerticalAlignment: TableCellVerticalAlignment.middle,
                   // textDirection: TextDirection.rtl,
                   border: TableBorder.all(),
                   children: [
                     TableRow(
                       children: [
-                        Text(
-                        'Name of the bank',
-                        style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                        ),
-                          textAlign: TextAlign.center,
+                        TableCell(
+                          verticalAlignment: TableCellVerticalAlignment.middle,
+                          child: Text(
+                          'Name of the bank',
+                          style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                          ),
+                            textAlign: TextAlign.center,
+                          ),
                         ),
                         Text(
                           'Agriculture loan schemes offered',
@@ -55,15 +78,26 @@ class _LoanState extends State<Loan> {
                           ),
                           textAlign: TextAlign.center,
                         ),
+                        Text(
+                          'Contact Information',
+                          style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                          ),
+                          textAlign: TextAlign.center,
+                        )
                       ]
                     ),
                     TableRow(
                       children: [
-                        Text('State Bank of India',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            fontSize: 15,
-                            fontWeight: FontWeight.bold
+                        TableCell(
+                          verticalAlignment: TableCellVerticalAlignment.middle,
+                          child: Text('State Bank of India',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold
+                            ),
                           ),
                         ),
                         Padding(
@@ -100,16 +134,32 @@ class _LoanState extends State<Loan> {
                               Text('$bullet Scheme for Debt Swapping of Borrowers')
                             ],
                           ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text('$bullet Email:-'),
+                              // SizedBox(height: 1),
+                              Text('state_bank_of_india@gmail.com'),
+                              SizedBox(height: 1),
+                              Text('$bullet Phone number:- 9807654371')
+                            ],
+                          ),
                         )
                       ]
                     ),
                     TableRow(
                         children: [
-                          Text('National Bank for Agriculture and Rural Development (NABARD)',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                                fontSize: 15,
-                                fontWeight: FontWeight.bold
+                          TableCell(
+                            verticalAlignment: TableCellVerticalAlignment.middle,
+                            child: Text('National Bank for Agriculture and Rural Development (NABARD)',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.bold
+                              ),
                             ),
                           ),
                           Padding(
@@ -124,16 +174,32 @@ class _LoanState extends State<Loan> {
                                 Text('$bullet National Livestock Mission'),
                               ],
                             ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text('$bullet Email:-'),
+                                // SizedBox(height: 1),
+                                Text('national_bank@gmail.com'),
+                                SizedBox(height: 1),
+                                Text('$bullet Phone number:- 9807654371')
+                              ],
+                            ),
                           )
                         ]
                     ),
                     TableRow(
                         children: [
-                          Text('Karur Vysya Bank',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                                fontSize: 15,
-                                fontWeight: FontWeight.bold
+                          TableCell(
+                            verticalAlignment: TableCellVerticalAlignment.middle,
+                            child: Text('Karur Vysya Bank',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.bold
+                              ),
                             ),
                           ),
                           Padding(
@@ -168,16 +234,32 @@ class _LoanState extends State<Loan> {
                                 Text('$bullet Loans for SHG-JLG'),
                               ],
                             ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text('$bullet Email:-'),
+                                // SizedBox(height: 1),
+                                Text('karur_vysya_bank@gmail.com'),
+                                SizedBox(height: 1),
+                                Text('$bullet Phone number:- 9807654371')
+                              ],
+                            ),
                           )
                         ]
                     ),
                     TableRow(
                         children: [
-                          Text('ICICI Bank',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                                fontSize: 15,
-                                fontWeight: FontWeight.bold
+                          TableCell(
+                            verticalAlignment: TableCellVerticalAlignment.middle,
+                            child: Text('ICICI Bank',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.bold
+                              ),
                             ),
                           ),
                           Padding(
@@ -190,16 +272,32 @@ class _LoanState extends State<Loan> {
                                 Text('$bullet Tractor Loan'),
                               ],
                             ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text('$bullet Email:-'),
+                                // SizedBox(height: 1),
+                                Text('icici_bank@gmail.com'),
+                                SizedBox(height: 1),
+                                Text('$bullet Phone number:- 9807654371')
+                              ],
+                            ),
                           )
                         ]
                     ),
                     TableRow(
                         children: [
-                          Text('IndusInd Bank',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                                fontSize: 15,
-                                fontWeight: FontWeight.bold
+                          TableCell(
+                            verticalAlignment: TableCellVerticalAlignment.middle,
+                            child: Text('IndusInd Bank',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.bold
+                              ),
                             ),
                           ),
                           Padding(
@@ -216,6 +314,19 @@ class _LoanState extends State<Loan> {
                                 Text('$bullet Hi-Tech Agriculture (TL)'),
                               ],
                             ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text('$bullet Email:-'),
+                                // SizedBox(height: 1),
+                                Text('indusind_bank@gmail.com'),
+                                SizedBox(height: 1),
+                                Text('$bullet Phone number:- 9807654371')
+                              ],
+                            ),
                           )
                         ]
                     ),
@@ -223,9 +334,9 @@ class _LoanState extends State<Loan> {
                 ),
                 SizedBox(height: 25),
                 Text(
-                  'Contact us',
+                  'CONTACT',
                   style: TextStyle(
-                    fontSize: 25,
+                    fontSize: 22,
                     fontWeight: FontWeight.bold,
                     shadows: <Shadow>[
                       Shadow(
