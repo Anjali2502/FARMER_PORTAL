@@ -1,3 +1,4 @@
+import 'package:farmer_merchant/home/google_map_screen.dart';
 import 'package:farmer_merchant/home/navBar.dart';
 import 'package:flutter/material.dart';
 
@@ -69,7 +70,9 @@ class _APMCState extends State<APMC> {
                  top: size.height*0.20,
                  left: size.width*0.18,
                  child: FlatButton(
-                   onPressed: () {},
+                   onPressed: () {
+                     MapUtils.openMap(29.6857, 76.9905);
+                   },
                    child: Text('click to view google maps',
                      style: TextStyle(
                        color: Colors.white,
@@ -89,3 +92,4 @@ class _APMCState extends State<APMC> {
     );
   }
 }
+

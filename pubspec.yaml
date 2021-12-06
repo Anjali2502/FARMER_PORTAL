@@ -24,6 +24,7 @@ dependencies:
   flutter:
     sdk: flutter
   community_material_icon: ^5.9.55
+  url_launcher: ^6.0.17
 
 
   # The following adds the Cupertino Icons font to your application.
