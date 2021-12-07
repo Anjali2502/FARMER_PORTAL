@@ -21,8 +21,8 @@ class NavBar extends StatelessWidget {
             decoration: BoxDecoration(
               color: Colors.black,
             ),
-            accountName: Text('gegeef'),
-            accountEmail: Text('abc@gmail.com'),
+            accountName: Text('sample'),
+            accountEmail: Text('sample@gmail.com'),
             currentAccountPicture: CircleAvatar(
               child: ClipOval(
                 child: Image.asset('assets/farmers.PNG',

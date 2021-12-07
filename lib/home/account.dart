@@ -63,7 +63,7 @@ class _AccountState extends State<Account> {
               title: Text('Account'),
               backgroundColor: Colors.black,
             ),
-            backgroundColor: Colors.grey[300],
+            backgroundColor: Colors.white,
             body: Padding(
               padding: const EdgeInsets.all(15.0),
               child: GestureDetector(
@@ -111,12 +111,12 @@ class _AccountState extends State<Account> {
                           color: Colors.black,
                         ),
                         focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.white),
+                            borderSide: BorderSide(color: Colors.grey),
                             borderRadius:
                             BorderRadius.all(Radius.circular(35.0))
                         ),
                         enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.white),
+                          borderSide: BorderSide(color: Colors.grey),
                           borderRadius:
                           BorderRadius.all(Radius.circular(35.0)),
                         ),
@@ -155,12 +155,12 @@ class _AccountState extends State<Account> {
                           color: Colors.black,
                         ),
                         focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color:Colors.white),
+                            borderSide: BorderSide(color:Colors.grey),
                             borderRadius:
                             BorderRadius.all(Radius.circular(35.0))
                         ),
                         enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color:Colors.white),
+                          borderSide: BorderSide(color:Colors.grey),
                           borderRadius:
                           BorderRadius.all(Radius.circular(35.0)),
                         ),
@@ -195,12 +195,12 @@ class _AccountState extends State<Account> {
                           color: Colors.black,
                         ),
                         focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.white),
+                            borderSide: BorderSide(color: Colors.grey),
                             borderRadius:
                             BorderRadius.all(Radius.circular(35.0))
                         ),
                         enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.white),
+                          borderSide: BorderSide(color: Colors.grey),
                           borderRadius:
                           BorderRadius.all(Radius.circular(35.0)),
                         ),
@@ -239,12 +239,12 @@ class _AccountState extends State<Account> {
                           color: Colors.black,
                         ),
                         focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.white),
+                            borderSide: BorderSide(color: Colors.grey),
                             borderRadius:
                             BorderRadius.all(Radius.circular(35.0))
                         ),
                         enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.white),
+                          borderSide: BorderSide(color: Colors.grey),
                           borderRadius:
                           BorderRadius.all(Radius.circular(35.0)),
                         ),
@@ -283,12 +283,12 @@ class _AccountState extends State<Account> {
                           color: Colors.black,
                         ),
                         focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.white),
+                            borderSide: BorderSide(color: Colors.grey),
                             borderRadius:
                             BorderRadius.all(Radius.circular(35.0))
                         ),
                         enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.white),
+                          borderSide: BorderSide(color: Colors.grey),
                           borderRadius:
                           BorderRadius.all(Radius.circular(35.0)),
                         ),
@@ -352,12 +352,12 @@ class _AccountState extends State<Account> {
                           color: Colors.black,
                         ),
                         focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.white),
+                            borderSide: BorderSide(color: Colors.grey),
                             borderRadius:
                             BorderRadius.all(Radius.circular(35.0))
                         ),
                         enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.white),
+                          borderSide: BorderSide(color: Colors.grey),
                           borderRadius:
                           BorderRadius.all(Radius.circular(35.0)),
                         ),
@@ -396,12 +396,12 @@ class _AccountState extends State<Account> {
                           color: Colors.black,
                         ),
                         focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.white),
+                            borderSide: BorderSide(color: Colors.grey),
                             borderRadius:
                             BorderRadius.all(Radius.circular(35.0))
                         ),
                         enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.white),
+                          borderSide: BorderSide(color: Colors.grey),
                           borderRadius:
                           BorderRadius.all(Radius.circular(35.0)),
                         ),
@@ -447,12 +447,12 @@ class _AccountState extends State<Account> {
                           color: Colors.black,
                         ),
                         focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.white),
+                            borderSide: BorderSide(color: Colors.grey),
                             borderRadius:
                             BorderRadius.all(Radius.circular(35.0))
                         ),
                         enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.white),
+                          borderSide: BorderSide(color: Colors.grey),
                           borderRadius:
                           BorderRadius.all(Radius.circular(35.0)),
                         ),
@@ -491,12 +491,12 @@ class _AccountState extends State<Account> {
                           color: Colors.black,
                         ),
                         focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.white),
+                            borderSide: BorderSide(color: Colors.grey),
                             borderRadius:
                             BorderRadius.all(Radius.circular(35.0))
                         ),
                         enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.white),
+                          borderSide: BorderSide(color: Colors.grey),
                           borderRadius:
                           BorderRadius.all(Radius.circular(35.0)),
                         ),
@@ -542,12 +542,12 @@ class _AccountState extends State<Account> {
                           color: Colors.black,
                         ),
                         focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.white),
+                            borderSide: BorderSide(color: Colors.grey),
                             borderRadius:
                             BorderRadius.all(Radius.circular(35.0))
                         ),
                         enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.white),
+                          borderSide: BorderSide(color: Colors.grey),
                           borderRadius:
                           BorderRadius.all(Radius.circular(35.0)),
                         ),
@@ -586,12 +586,12 @@ class _AccountState extends State<Account> {
                           color: Colors.black,
                         ),
                         focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.white),
+                            borderSide: BorderSide(color: Colors.grey),
                             borderRadius:
                             BorderRadius.all(Radius.circular(35.0))
                         ),
                         enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.white),
+                          borderSide: BorderSide(color: Colors.grey),
                           borderRadius:
                           BorderRadius.all(Radius.circular(35.0)),
                         ),
@@ -637,12 +637,12 @@ class _AccountState extends State<Account> {
                           color: Colors.black,
                         ),
                         focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.white),
+                            borderSide: BorderSide(color: Colors.grey),
                             borderRadius:
                             BorderRadius.all(Radius.circular(35.0))
                         ),
                         enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.white),
+                          borderSide: BorderSide(color: Colors.grey),
                           borderRadius:
                           BorderRadius.all(Radius.circular(35.0)),
                         ),
@@ -681,12 +681,12 @@ class _AccountState extends State<Account> {
                           color: Colors.black,
                         ),
                         focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.white),
+                            borderSide: BorderSide(color: Colors.grey),
                             borderRadius:
                             BorderRadius.all(Radius.circular(35.0))
                         ),
                         enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.white),
+                          borderSide: BorderSide(color: Colors.grey),
                           borderRadius:
                           BorderRadius.all(Radius.circular(35.0)),
                         ),
@@ -732,12 +732,12 @@ class _AccountState extends State<Account> {
                           color: Colors.black,
                         ),
                         focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.white),
+                            borderSide: BorderSide(color: Colors.grey),
                             borderRadius:
                             BorderRadius.all(Radius.circular(35.0))
                         ),
                         enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.white),
+                          borderSide: BorderSide(color: Colors.grey),
                           borderRadius:
                           BorderRadius.all(Radius.circular(35.0)),
                         ),
@@ -776,12 +776,12 @@ class _AccountState extends State<Account> {
                           color: Colors.black,
                         ),
                         focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.white),
+                            borderSide: BorderSide(color: Colors.grey),
                             borderRadius:
                             BorderRadius.all(Radius.circular(35.0))
                         ),
                         enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.white),
+                          borderSide: BorderSide(color: Colors.grey),
                           borderRadius:
                           BorderRadius.all(Radius.circular(35.0)),
                         ),
@@ -827,12 +827,12 @@ class _AccountState extends State<Account> {
                           color: Colors.black,
                         ),
                         focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.white),
+                            borderSide: BorderSide(color: Colors.grey),
                             borderRadius:
                             BorderRadius.all(Radius.circular(35.0))
                         ),
                         enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.white),
+                          borderSide: BorderSide(color: Colors.grey),
                           borderRadius:
                           BorderRadius.all(Radius.circular(35.0)),
                         ),
@@ -871,12 +871,12 @@ class _AccountState extends State<Account> {
                           color: Colors.black,
                         ),
                         focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.white),
+                            borderSide: BorderSide(color: Colors.grey),
                             borderRadius:
                             BorderRadius.all(Radius.circular(35.0))
                         ),
                         enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.white),
+                          borderSide: BorderSide(color: Colors.grey),
                           borderRadius:
                           BorderRadius.all(Radius.circular(35.0)),
                         ),
@@ -884,16 +884,22 @@ class _AccountState extends State<Account> {
                       ),
 
                     ),
-                    TextButton(
-                      style: ButtonStyle(
-                        foregroundColor: MaterialStateProperty.all<Color>(
-                            Colors.blue),
+                    SizedBox(height: 20),
+                    RaisedButton(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
                       ),
+                      color: Colors.black,
                       onPressed: () {
                         DatabaseService(uid: user.uid,email: user.email).updateDocFields(fullname, phno, state, city, wheat_price,wheat_qty, rice_price, rice_qty, maize_price, maize_qty, millets_price, millets_qty, jute_price, jute_qty, cotton_price, cotton_qty);
 
                       },
-                      child: Text('Save'),
+                      child: Text('Submit',
+                        style: TextStyle(
+                          fontSize: 20,
+                          color: Colors.white,
+                        ),
+                      ),
                     )
 
                   ],

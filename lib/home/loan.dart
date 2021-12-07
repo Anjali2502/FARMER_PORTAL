@@ -37,6 +37,7 @@ class _LoanState extends State<Loan> {
                   style: TextStyle(
                       fontSize: 22,
                       fontWeight: FontWeight.bold,
+                      color: Colors.grey[700],
                       shadows: <Shadow>[
                         Shadow(
                           offset: Offset(1.0,0),
@@ -338,6 +339,7 @@ class _LoanState extends State<Loan> {
                   style: TextStyle(
                     fontSize: 22,
                     fontWeight: FontWeight.bold,
+                    color: Colors.grey[700],
                     shadows: <Shadow>[
                       Shadow(
                         offset: Offset(1.0,0),
