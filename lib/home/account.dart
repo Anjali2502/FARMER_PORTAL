@@ -945,47 +945,47 @@ class _AccountState extends State<Account> {
 // }
 }
 
-class BuildTextField extends StatelessWidget {
-  BuildTextField({Key? key, required this.placeholder,required this.fieldval}) : super(key: key);
-
-  final String placeholder;
-  String fieldval;
-
-  @override
-  Widget build(BuildContext context) {
-    return TextField(
-
-//controller: fieldval,
-
-      onChanged: (val){
-        fieldval=val;
-      },
-      decoration:
-      InputDecoration(
-        contentPadding: EdgeInsets.only(bottom: 6, left: 8),
-        // labelText: labelText,
-        // labelStyle: TextStyle(
-        //   fontSize: 16,
-        // ),
-        floatingLabelBehavior: FloatingLabelBehavior.always,
-        hintText: placeholder,
-        hintStyle: TextStyle(
-          fontSize: 16,
-          color: Colors.black,
-        ),
-        focusedBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: Colors.white),
-            borderRadius:
-            BorderRadius.all(Radius.circular(35.0))
-        ),
-        enabledBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: Colors.white),
-          borderRadius:
-          BorderRadius.all(Radius.circular(35.0)),
-        ),
-
-      ),
-
-    );
-  }
-}
+// class BuildTextField extends StatelessWidget {
+//   BuildTextField({Key? key, required this.placeholder,required this.fieldval}) : super(key: key);
+//
+//   final String placeholder;
+//   String fieldval;
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return TextField(
+//
+// //controller: fieldval,
+//
+//       onChanged: (val){
+//         fieldval=val;
+//       },
+//       decoration:
+//       InputDecoration(
+//         contentPadding: EdgeInsets.only(bottom: 6, left: 8),
+//         // labelText: labelText,
+//         // labelStyle: TextStyle(
+//         //   fontSize: 16,
+//         // ),
+//         floatingLabelBehavior: FloatingLabelBehavior.always,
+//         hintText: placeholder,
+//         hintStyle: TextStyle(
+//           fontSize: 16,
+//           color: Colors.black,
+//         ),
+//         focusedBorder: OutlineInputBorder(
+//             borderSide: BorderSide(color: Colors.white),
+//             borderRadius:
+//             BorderRadius.all(Radius.circular(35.0))
+//         ),
+//         enabledBorder: OutlineInputBorder(
+//           borderSide: BorderSide(color: Colors.white),
+//           borderRadius:
+//           BorderRadius.all(Radius.circular(35.0)),
+//         ),
+//
+//       ),
+//
+//     );
+//   }
+// }
